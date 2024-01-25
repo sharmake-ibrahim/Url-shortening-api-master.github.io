@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+
 * {
     padding: 0;
     margin: 0;
@@ -5,106 +8,73 @@
     text-decoration: none;
     list-style-type: none;
 }
+body{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
 
-@mixin ButtonClone {
-    max-width: 100%;
-    height: 45px;
-    width: 100px;
-    font-size: 17px;
+$ColorPalette: (
+    ButtonClr: #2BD0D0,
+    TitleClr: #34313D,
+    smallTxtClr: #9E9AA8,
+    btnHoverClr: #9AE3E3,
+    BgClr: #EFF1F7,
+    ErrorClr: #F46363,
+    linkClr: #2BD0D0,
+    BgWhite: #EFF1F7,
+    GreyClr: #9E9AA8,
+    FooterBgClr: #232127
+);
+
+
+@function allColors($color-name) {
+    @return map-get($ColorPalette, $color-name)
+};
+
+@mixin Button {
+    height: 48px;
+    width: 278px;
+    background-color: allColors(ButtonClr);
+    border-radius: 5px;
     border: none;
-    color: white;
-    border-radius: 5px;
-    background-color: aqua;
-    &:hover {
-        background-color: aquamarine;
-    }
+    color: allColors(BgWhite);
 }
 
-
-
-
-
-
-
-.user-input {
-    height: 100px;
-    width: 600px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: grey;
-    border-radius: 5px;
-
-    .search-input {
-        display: flex;
-        flex-direction: column;
-        height: 40px;
-        width: 400px;
-        border-radius: 5px;
-
-    span {
-        font-size: 13px;
-        color: red;
-    }
+.shorten-btn {
+    @include Button();
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 3;
 }
-    input {
-    max-width: 100%;
-    width: 350px;
-    padding: 15px 0;
-    border: none;
-    row-gap: 10px;
-    margin-left: 15px;
-    outline: none;
-}
-
-
-.shorten-btn{
-    @include ButtonClone()
-}
-
-
-}
-
-.links {
-    height: 85px;
-    width: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
-    border-radius: 5px;
-    background-color: rosybrown;
-
-
-            
-    .flex {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        column-gap: 15px;
-    }
-
-    .flex a {
-        color: aqua;
-        &:hover {
-            color: aquamarine;
-        }
-    }
-
 
 .copy-btn {
-    @include ButtonClone();
+    @include Button();
+    height: 40px;
+    width: 295px;
 }
 
-ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 3em;
+.invalid-text {
+    color: allColors(ErrorClr);
 }
 
+.user-input {
+    height: 160px;
+    min-height: 327px;
+    background-color: allColors(TitleClr);
+    z-index: 3; 
+
+    picture img {
+        position: absolute;
+        z-index: -1;
+    }
+
 }
+
+.flex a {
+    color: allColors(linkClr);
+}
+
+
 
 
 

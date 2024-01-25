@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -6,90 +7,49 @@
   list-style-type: none;
 }
 
-.user-input {
-  height: 100px;
-  width: 600px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: grey;
-  border-radius: 5px;
-}
-.user-input .search-input {
-  display: flex;
-  flex-direction: column;
-  height: 40px;
-  width: 400px;
-  border-radius: 5px;
-}
-.user-input .search-input span {
-  font-size: 13px;
-  color: red;
-}
-.user-input input {
-  max-width: 100%;
-  width: 350px;
-  padding: 15px 0;
-  border: none;
-  row-gap: 10px;
-  margin-left: 15px;
-  outline: none;
-}
-.user-input .shorten-btn {
-  max-width: 100%;
-  height: 45px;
-  width: 100px;
-  font-size: 17px;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  background-color: aqua;
-}
-.user-input .shorten-btn:hover {
-  background-color: aquamarine;
+body {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
 }
 
-.links {
-  height: 85px;
-  width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2em;
+.shorten-btn {
+  height: 48px;
+  width: 278px;
+  background-color: #2BD0D0;
   border-radius: 5px;
-  background-color: rosybrown;
-}
-.links .flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 15px;
-       column-gap: 15px;
-}
-.links .flex a {
-  color: aqua;
-}
-.links .flex a:hover {
-  color: aquamarine;
-}
-.links .copy-btn {
-  max-width: 100%;
-  height: 45px;
-  width: 100px;
-  font-size: 17px;
   border: none;
-  color: white;
+  color: #EFF1F7;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.copy-btn {
+  height: 48px;
+  width: 278px;
+  background-color: #2BD0D0;
   border-radius: 5px;
-  background-color: aqua;
+  border: none;
+  color: #EFF1F7;
+  height: 40px;
+  width: 295px;
 }
-.links .copy-btn:hover {
-  background-color: aquamarine;
+
+.invalid-text {
+  color: #F46363;
 }
-.links ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  -moz-column-gap: 3em;
-       column-gap: 3em;
+
+.user-input {
+  height: 160px;
+  min-height: 327px;
+  background-color: #34313D;
+  z-index: 3;
+}
+.user-input picture img {
+  position: absolute;
+  z-index: -1;
+}
+
+.flex a {
+  color: #2BD0D0;
 }/*# sourceMappingURL=style.css.map */
