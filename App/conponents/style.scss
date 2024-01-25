@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+@mixin ButtonClone {
+    max-width: 100%;
+    height: 45px;
+    width: 100px;
+    font-size: 17px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: aqua;
+    &:hover {
+        background-color: aquamarine;
+    }
+}
+
+
+
+
+
+
+
+.user-input {
+    height: 100px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+    border-radius: 5px;
+
+    .search-input {
+        display: flex;
+        flex-direction: column;
+        height: 40px;
+        width: 400px;
+        border-radius: 5px;
+
+    span {
+        font-size: 13px;
+        color: red;
+    }
+}
+    input {
+    max-width: 100%;
+    width: 350px;
+    padding: 15px 0;
+    border: none;
+    row-gap: 10px;
+    margin-left: 15px;
+    outline: none;
+}
+
+
+.shorten-btn{
+    @include ButtonClone()
+}
+
+
+}
+
+.links {
+    height: 85px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    border-radius: 5px;
+    background-color: rosybrown;
+
+
+            
+    .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 15px;
+    }
+
+    .flex a {
+        color: aqua;
+        &:hover {
+            color: aquamarine;
+        }
+    }
+
+
+.copy-btn {
+    @include ButtonClone();
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3em;
+}
+
+}
+
+
+
+
