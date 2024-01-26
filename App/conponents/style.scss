@@ -23,9 +23,15 @@ $ColorPalette: (
     linkClr: #2BD0D0,
     BgWhite: #EFF1F7,
     GreyClr: #9E9AA8,
-    FooterBgClr: #232127
+    FooterBgClr: #232127,
+    WhiteBg: #FFFFFF
 );
 
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: allColors(BgWhite);
+}
 
 @function allColors($color-name) {
     @return map-get($ColorPalette, $color-name)
@@ -40,42 +46,117 @@ $ColorPalette: (
     color: allColors(BgWhite);
 }
 
+@mixin flexBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-input {
+    display: flex;
+    row-gap: 4sepx;
+    flex-direction: column;
+    padding: 6px 0;
+}
+
 .shorten-btn {
     @include Button();
     font-size: 18px;
     font-weight: bold;
     z-index: 3;
+         &:hover {
+        background-color: allColors(btnHoverClr);
+     }
 }
 
 .copy-btn {
     @include Button();
     height: 40px;
     width: 295px;
+     cursor: pointer;
+     background-color: allColors(linkClr);
+     &:hover {
+        background-color: allColors(btnHoverClr);
+     }
+     &:active {
+        background-color: allColors(TitleClr);
+     }
 }
 
 .invalid-text {
     color: allColors(ErrorClr);
+    opacity: 0;
+    font-size: 10px;
+    font-style: italic;
 }
 
 .user-input {
-    height: 160px;
-    min-height: 327px;
+    height: 180px;
+    width:327px;
     background-color: allColors(TitleClr);
-    z-index: 3; 
+    border-radius: 5px;
+    
+    @include flexBox();
 
-    picture img {
-        position: absolute;
-        z-index: -1;
-    }
+}   
 
-}
+
 
 .flex a {
     color: allColors(linkClr);
+    padding: 5px 0;
+}
+
+.links {
+    min-height: 155px;
+    width: 327px;
+    background-color: allColors(WhiteBg);
+    border-radius: 5px;
+    margin-top: 1em;
+
+    li {
+        border-bottom: 1px solid allColors(BgClr);
+        padding: 5px 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+
+    .flex {
+        @include flexBox();
+    }
+
+
+}
+
+.red-border {
+    border: 1px solid allColors(ErrorClr);
 }
 
 
 
+.link-section  {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: allColors(GreyClr);
+}
 
 
-
+.searchBox {
+    background-color: allColors(WhiteBg);
+    height: 48px;
+    width: 279px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
