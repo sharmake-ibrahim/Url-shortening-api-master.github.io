@@ -10,9 +10,14 @@ footer {
   color: white;
   row-gap: 2em;
 }
-@media (max-width = 840px) {
+@media (min-width: 760px) {
   footer {
-    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  footer {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -22,6 +27,11 @@ img {
   width: 35px;
   -o-object-fit: contain;
      object-fit: contain;
+  cursor: pointer;
+}
+
+img svg:hover {
+  color: #2BD0D0;
 }
 
 .features,
@@ -29,6 +39,7 @@ img {
 .company {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding-bottom: 1.5em;
   row-gap: 20px;
@@ -38,6 +49,7 @@ img {
   display: flex;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+  padding-bottom: 20px;
 }
 
 .logo {
@@ -57,6 +69,13 @@ img {
   font-size: 15px;
 }
 
+footer li {
+  cursor: pointer;
+}
+footer li:hover {
+  color: #2BD0D0;
+}
+
 .title {
   color: white;
   font-size: 1.5rem;
@@ -69,6 +88,11 @@ img {
   font-size: 3rem;
   color: white;
   margin-top: 2em;
+}
+@media (min-width: 760px) {
+  .big-title {
+    margin-top: 0px;
+  }
 }
 
 * {

@@ -1,11 +1,19 @@
 
-$desktop: 840px;
+$ipad-view: 760px;
+$destop-view: 960px;
 
-@mixin Desktop {
-    @media (max-width = #{$desktop}) {
+@mixin Ipad {
+    @media (min-width: #{$ipad-view}) {
         @content;
     }
 }
+
+@mixin Desktop {
+    @media (min-width: #{$destop-view}) {
+        @content;
+    }
+}
+
 
 
 footer {
@@ -18,10 +26,13 @@ footer {
     place-items: center;
     color: white;
     row-gap: 2em;
-
-    @include Desktop {
-        grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    @include Ipad{
+        grid-template-columns: repeat(2, 1fr);
     }
+    @include Desktop {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
 }
 
 img {
@@ -29,6 +40,14 @@ img {
     height: 35px;
     width: 35px;
     object-fit: contain;
+    cursor: pointer;
+    
+}
+
+img svg {
+    &:hover {
+        color: #2BD0D0;
+    }
 }
 
 .features,
@@ -36,6 +55,7 @@ img {
 .company{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding-bottom: 1.5em;
     row-gap: 20px;
@@ -44,6 +64,7 @@ img {
 .socail-media {
     display: flex;
     column-gap: 2rem;
+    padding-bottom: 20px;
 }
 
 .logo {
@@ -63,6 +84,13 @@ img {
     font-size: 15px;
 }
 
+footer li {
+    cursor: pointer;
+    &:hover {
+        color: #2BD0D0;
+    }
+}
+
 
 
 
@@ -78,4 +106,7 @@ img {
     font-size: 3rem;
     color: white;
     margin-top: 2em;
+    @include Ipad {
+        margin-top: 0px;
+    }
 }
