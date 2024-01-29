@@ -95,6 +95,22 @@ footer li:hover {
   }
 }
 
+.boost-links {
+  min-height: 300px;
+  min-width: 375px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #3A3054;
+}
+@media (min-width: 376px) {
+  .boost-links {
+    min-height: 250px;
+    min-width: 376px;
+    max-width: 1440px;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;

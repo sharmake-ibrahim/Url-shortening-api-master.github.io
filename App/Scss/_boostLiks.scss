@@ -1,0 +1,33 @@
+$ipad-view: 376px;
+$destop-view: 960px;
+
+@mixin Ipad {
+    @media (min-width: #{$ipad-view}) {
+        @content;
+    }
+}
+
+@mixin Desktop {
+    @media (min-width: #{$destop-view}) {
+        @content;
+    }
+}
+
+.boost-links {
+    min-height: 300px;
+    min-width: 375px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #3A3054;
+
+        @include Ipad {
+            min-height: 250px;
+            min-width: 376px;
+            max-width: 1440px;
+        
+        }
+        
+    }
+
+
