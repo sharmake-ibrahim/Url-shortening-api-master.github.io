@@ -1,0 +1,22 @@
+
+$ColorPalette: (
+    ButtonClr: #2BD0D0,
+    TitleClr: #34313D,
+    smallTxtClr: #9E9AA8,
+    btnHoverClr: #9AE3E3,
+    BgClr: #EFF1F7,
+    ErrorClr: #F46363,
+    linkClr: #2BD0D0,
+    BgWhite: #EFF1F7,
+    GreyClr: #9E9AA8,
+    FooterBgClr: #232127,
+    WhiteBg: #FFFFFF
+);
+
+
+
+
+
+@function allColors($color-name) {
+    @return map-get($ColorPalette, $color-name)
+};

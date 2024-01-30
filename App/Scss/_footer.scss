@@ -1,20 +1,4 @@
 
-$ipad-view: 760px;
-$destop-view: 960px;
-
-@mixin Ipad {
-    @media (min-width: #{$ipad-view}) {
-        @content;
-    }
-}
-
-@mixin Desktop {
-    @media (min-width: #{$destop-view}) {
-        @content;
-    }
-}
-
-
 
 footer {
     min-height: 776px;
