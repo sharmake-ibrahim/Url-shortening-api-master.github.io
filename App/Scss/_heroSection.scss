@@ -1,0 +1,145 @@
+@import "./variables";
+
+
+
+$destop-view: 1600px;
+$ipad-view: 1024px;
+
+
+@mixin Ipad {
+    @media (min-width: #{$ipad-view}) {
+        @content;
+    }
+}
+
+@mixin Desktop {
+    @media (min-width: #{$destop-view}) {
+        @content;
+    }
+}
+
+
+@function allColors($color-name) {
+    @return map-get($ColorPalette, $color-name)
+};
+
+.hero-section {
+    min-height: 927px;
+    min-width:100%;
+    background-color: allColors(WhiteBg);
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    place-items: center;
+    grid-template-areas:  
+    " heroImage"
+    "text";
+
+    @include Ipad {
+        grid-template-columns: repeat(2, 450px);
+        grid-template-areas: 
+        " text . heroImage";
+        align-items: flex-start;
+    }
+
+    @include Desktop {
+        min-height: 800px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        " text  heroImage";
+        align-items: flex-start;
+    }
+
+
+    .hero-btn  {
+        height: 56px;
+        width: 197px;
+        background-color: allColors(linkClr);
+        border-radius: 5rem;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: allColors(WhiteBg);
+        margin-top: 20px;
+
+        &:hover {
+            background-color: allColors(btnHoverClr);
+        }        
+    }
+
+
+
+    .hero-img  img{
+        order: 1;
+        height: 337px;
+        width: 460px;
+        
+        @include Ipad {
+            min-height: 400px;
+            min-width: 550px;
+        }
+
+        @include Desktop {
+            min-height: 482px;
+            min-width: 733px;
+        }
+    }
+    .hero-img {
+        grid-area: heroImage;
+    }
+    .hero-text {
+        grid-area: text;
+        height: 290px;
+        width: 327px;
+        text-align: center;
+
+        @include Desktop {
+            text-align: left;
+        }
+
+  @include Desktop { 
+    min-height: 351px;
+    width: 564px;
+    text-align: left;
+  }  
+
+        
+    }
+
+    .hero-title {
+        font-size: 42px;
+        font-weight: bold;
+        color: allColors(TitleClr);
+        line-height: 1;
+        
+        @include Desktop {
+            font-size: 80px;
+            max-width: 564px;
+        }
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        color: allColors(GreyClr);
+        max-width: 327px;
+        padding-top: 10px;
+        text-align: center;
+        
+        @include Ipad {
+            text-align: left;
+        }
+        @include Desktop {
+            max-width: 540px;
+            text-align: left;
+        }
+    }
+
+
+
+
+
+}
+
+
+
+

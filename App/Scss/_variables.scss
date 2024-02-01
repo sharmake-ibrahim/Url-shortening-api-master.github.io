@@ -17,6 +17,3 @@ $ColorPalette: (
 
 
 
-@function allColors($color-name) {
-    @return map-get($ColorPalette, $color-name)
-};

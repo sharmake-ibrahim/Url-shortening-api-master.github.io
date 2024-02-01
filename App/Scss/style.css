@@ -95,28 +95,121 @@ footer li:hover {
   }
 }
 
-.boost-links {
-  min-height: 300px;
-  min-width: 375px;
-  width: 100%;
+.hero-section {
+  min-height: 927px;
+  min-width: 100%;
+  background-color: #FFFFFF;
   display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
   place-items: center;
-  background-color: #3A3054;
+  grid-template-areas: " heroImage" "text";
 }
-@media (min-width: 376px) {
-  .boost-links {
-    min-height: 250px;
-    min-width: 376px;
-    max-width: 1440px;
+@media (min-width: 1024px) {
+  .hero-section {
+    grid-template-columns: repeat(2, 450px);
+    grid-template-areas: " text . heroImage";
+    align-items: flex-start;
+  }
+}
+@media (min-width: 1600px) {
+  .hero-section {
+    min-height: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: " text  heroImage";
+    align-items: flex-start;
+  }
+}
+.hero-section .hero-btn {
+  height: 56px;
+  width: 197px;
+  background-color: #2BD0D0;
+  border-radius: 5rem;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+.hero-section .hero-btn:hover {
+  background-color: #9AE3E3;
+}
+.hero-section .hero-img img {
+  order: 1;
+  height: 337px;
+  width: 460px;
+}
+@media (min-width: 1024px) {
+  .hero-section .hero-img img {
+    min-height: 400px;
+    min-width: 550px;
+  }
+}
+@media (min-width: 1600px) {
+  .hero-section .hero-img img {
+    min-height: 482px;
+    min-width: 733px;
+  }
+}
+.hero-section .hero-img {
+  grid-area: heroImage;
+}
+.hero-section .hero-text {
+  grid-area: text;
+  height: 290px;
+  width: 327px;
+  text-align: center;
+}
+@media (min-width: 1600px) {
+  .hero-section .hero-text {
+    text-align: left;
+  }
+}
+@media (min-width: 1600px) {
+  .hero-section .hero-text {
+    min-height: 351px;
+    width: 564px;
+    text-align: left;
+  }
+}
+.hero-section .hero-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #34313D;
+  line-height: 1;
+}
+@media (min-width: 1600px) {
+  .hero-section .hero-title {
+    font-size: 80px;
+    max-width: 564px;
+  }
+}
+.hero-section .hero-text p {
+  font-size: 18px;
+  color: #9E9AA8;
+  max-width: 327px;
+  padding-top: 10px;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .hero-section .hero-text p {
+    text-align: left;
+  }
+}
+@media (min-width: 1600px) {
+  .hero-section .hero-text p {
+    max-width: 540px;
+    text-align: left;
   }
 }
 
 header {
   min-height: 90px;
-  width: 100%;
+  min-width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #FFFFFF;
 }
 header .logo img {
   -o-object-fit: contain;
@@ -221,7 +314,7 @@ body {
 .container {
   min-height: 100vh;
   width: 100%;
-  background-color: allColors(BgWhite);
+  background-color: #EFF1F7;
 }
 
 .search-input {

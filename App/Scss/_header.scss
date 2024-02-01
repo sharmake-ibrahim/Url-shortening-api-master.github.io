@@ -1,10 +1,39 @@
 
+@import "./variables";
+$ipad-view: 760px;
+$mobile: 760px;
+$destop-view: 960px;
+
+
+
+
+@mixin Ipad {
+    @media (min-width: #{$ipad-view}) {
+        @content;
+    }
+}
+
+@mixin Desktop {
+    @media (min-width: #{$destop-view}) {
+        @content;
+    }
+}
+
+
+@mixin mobile{
+        @media (max-width: #{$mobile}) {
+            @content;
+        }
+}
+
+
 header {
     min-height: 90px;
-    width: 100%;
+    min-width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: allColors(WhiteBg);
 .logo img {
     object-fit: contain;
     height: 100px;
