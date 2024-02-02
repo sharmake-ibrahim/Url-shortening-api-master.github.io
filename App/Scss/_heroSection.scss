@@ -36,9 +36,9 @@ $ipad-view: 1024px;
     "text";
 
     @include Ipad {
-        grid-template-columns: repeat(2, 450px);
+        grid-template-columns: repeat(2, minmax(400px, 550px));
         grid-template-areas: 
-        " text . heroImage";
+        "text  heroImage ";
         align-items: flex-start;
     }
 
@@ -93,7 +93,9 @@ $ipad-view: 1024px;
         width: 327px;
         text-align: center;
 
-        @include Desktop {
+        @include Ipad {
+            min-height: 351px;
+            width: 400px;
             text-align: left;
         }
 
@@ -111,6 +113,11 @@ $ipad-view: 1024px;
         font-weight: bold;
         color: allColors(TitleClr);
         line-height: 1;
+
+        @include Ipad {
+            font-size: 65px;
+            max-width: 564px;
+        }
         
         @include Desktop {
             font-size: 80px;
@@ -124,6 +131,7 @@ $ipad-view: 1024px;
         max-width: 327px;
         padding-top: 10px;
         text-align: center;
+        max-width: 540px;
         
         @include Ipad {
             text-align: left;

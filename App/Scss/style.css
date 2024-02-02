@@ -107,8 +107,8 @@ footer li:hover {
 }
 @media (min-width: 1024px) {
   .hero-section {
-    grid-template-columns: repeat(2, 450px);
-    grid-template-areas: " text . heroImage";
+    grid-template-columns: repeat(2, minmax(400px, 550px));
+    grid-template-areas: "text  heroImage ";
     align-items: flex-start;
   }
 }
@@ -160,8 +160,10 @@ footer li:hover {
   width: 327px;
   text-align: center;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1024px) {
   .hero-section .hero-text {
+    min-height: 351px;
+    width: 400px;
     text-align: left;
   }
 }
@@ -178,6 +180,12 @@ footer li:hover {
   color: #34313D;
   line-height: 1;
 }
+@media (min-width: 1024px) {
+  .hero-section .hero-title {
+    font-size: 65px;
+    max-width: 564px;
+  }
+}
 @media (min-width: 1600px) {
   .hero-section .hero-title {
     font-size: 80px;
@@ -190,6 +198,7 @@ footer li:hover {
   max-width: 327px;
   padding-top: 10px;
   text-align: center;
+  max-width: 540px;
 }
 @media (min-width: 1024px) {
   .hero-section .hero-text p {
