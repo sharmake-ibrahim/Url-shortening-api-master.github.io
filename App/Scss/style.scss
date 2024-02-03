@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 @import "./footer";
+@import "./statistic";
 @import "./boostLiks";
 @import "./heroSection";
 @import "./header";
@@ -48,7 +49,7 @@ body{
 .container {
     min-height: 100vh;
     width: 100%;
-    background-color: allColors(BgWhite);
+    background-color: allColors(GreyClr);
 }
 
 
