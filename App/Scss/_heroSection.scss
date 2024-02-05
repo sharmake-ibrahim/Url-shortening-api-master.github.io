@@ -43,7 +43,7 @@ $ipad-view: 1024px;
     }
 
     @include Desktop {
-        min-height: 800px;
+        min-height: 650px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
         " text  heroImage";

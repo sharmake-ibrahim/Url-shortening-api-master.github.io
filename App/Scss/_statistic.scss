@@ -5,16 +5,37 @@
     height: 284px;
     max-width: 327px;
     border-radius: 5px;
+    padding: 0 20px;
+    @include Desktop {
+        height: 311px;
+        min-width: 350px;
+    }
+}
+
+
+$destop-view: 1200px;
+
+@mixin Desktop {
+    @media (min-width: #{$destop-view}) {
+        @content;
+    }
 }
 
 
 
 .grid-container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 80px;
     margin-bottom: 2em;
+
+    @include Desktop {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+    }
 }
 
 
@@ -23,6 +44,10 @@
 .item-one {
     @include items();
     background: #FFFFFF;
+
+    @include Desktop {
+        margin-bottom: 6rem;
+    }
 }
 
 .item-two,
@@ -40,6 +65,15 @@
 }
 
 
+
+.item-three {
+    @include Desktop {
+        margin-top: 4.5em;
+    }
+}
+
+
+
 .statis-logo {
     display: grid;
     place-items: center;
@@ -49,6 +83,11 @@
     padding: 20px;
     border-radius: 50%;
     margin-top: -7em;
+
+    @include Desktop {
+        align-self: flex-start;
+    }
+
 }
 
 .statis-logo img {
@@ -62,6 +101,10 @@
     min-height: 148px;
     max-width: 327px;
     margin: 5em;
+    @include Desktop {
+        min-height: 130px;
+        min-width: 540px;
+    }
 }
 
 .statistic-text h1 {
@@ -69,17 +112,22 @@
     font-weight: bold;
     color: allColors(TitleClr);
     padding: 20px 0 15px 0;
-   
-
-    p {
-        font-size: 15px;
-        color: allColors(smallTxtClr);
-        max-width: 263px;
-        padding: 0 8px;
+    @include Desktop {
+        font-size: 40px;
     }
+   
 }
 
+.statistic-text p {
+    font-size: 15px;
+    color:  #9E9AA8;
+    max-width: 540px;
+    padding: 0 8px;
 
+    @include Desktop {
+        font-size: 18px;
+    }
+}
 .statistic-section {
    min-height: 1242px;
     min-width: 100%;
@@ -89,21 +137,34 @@
     flex-direction: column;
     align-items: center;
     background-color: #EFF1F7;
+
+    @include Desktop {
+        min-height: 700px;
+    }
+
+
 }
 
 
 
 .stat-info {
     text-align: center;
+    @include Desktop {
+        text-align: left;
+    }
     h3 {
         color: allColors(TitleClr);
         padding: 15px 0;
         font-size: 22px;
         font-weight: bold;
+        @include Desktop {
+            font-size: 22px;
+        }
     }
 
     p {
         font-size: 15px;
-        color: allColors(smallTxtClr);
+        color: #9E9AA8;
+       
     }
 }

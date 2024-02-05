@@ -38,6 +38,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
     @include Desktop {
+        min-height: 310px;
         grid-template-columns: repeat(5, 1fr);
     }
 
@@ -73,6 +74,7 @@ img svg {
     display: flex;
     column-gap: 2rem;
     padding-bottom: 20px;
+ 
 }
 
 .logo {
