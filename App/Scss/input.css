@@ -1,0 +1,17 @@
+.shorten-btn {
+  height: 48px;
+  width: 278px;
+  background-color: #3A3054;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+}
+
+.input {
+  min-height: 48px;
+  min-width: 279px;
+  background-color: #ffffff;
+  padding-left: 10px;
+  display: block;
+  border-radius: 5px;
+}/*# sourceMappingURL=input.css.map */

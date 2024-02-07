@@ -261,6 +261,73 @@ footer li:hover {
   color: #9E9AA8;
 }
 
+.boost-section {
+  min-height: 300px;
+  width: 375px;
+  min-width: 100%;
+  background-color: #34313D;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boost-section .boost-info {
+  display: grid;
+  place-items: center;
+}
+.boost-section h1 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.boost-section .boost-btn {
+  height: 56px;
+  width: 197px;
+  background-color: #2BD0D0;
+  border-radius: 5rem;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+.boost-section .boost-btn:hover {
+  background-color: allColors(btnHoverClr);
+}
+
+.seaerch-section {
+  min-height: 160px;
+  min-width: 327px;
+  background-color: #34313D;
+  border-radius: 5px;
+}
+
+.shorten-btn {
+  height: 48px;
+  width: 278px;
+  background-color: #3A3054;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+}
+
+.input {
+  min-height: 48px;
+  min-width: 279px;
+  background-color: #ffffff;
+  padding-left: 10px;
+  display: block;
+  row-gap: 8px;
+}
+.input p {
+  font-size: 12px;
+  color: #f46363;
+  font-style: italic;
+}
+.input .error {
+  border: 1px solid #f46363;
+}
+
 .hero-section {
   min-height: 927px;
   min-width: 100%;

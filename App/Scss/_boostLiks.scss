@@ -1,33 +1,42 @@
-// $ipad-view: 376px;
-// $destop-view: 960px;
-
-// @mixin Ipad {
-//     @media (min-width: #{$ipad-view}) {
-//         @content;
-//     }
-// }
-
-// @mixin Desktop {
-//     @media (min-width: #{$destop-view}) {
-//         @content;
-//     }
-// }
-
-// .boost-links {
-//     min-height: 300px;
-//     min-width: 375px;
-//     width: 100%;
-//     display: grid;
-//     place-items: center;
-//     background-color: #3A3054;
-
-//         @include Ipad {
-//             min-height: 250px;
-//             min-width: 376px;
-//             max-width: 1440px;
-        
-//         }
-        
-//     }
 
 
+
+.boost-section {
+    min-height: 300px;
+    width: 375px;
+    min-width: 100%;
+    background-color: #34313D;
+    color:  #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .boost-info {
+        display: grid;
+        place-items: center;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+        padding-bottom: 15px;
+
+    }
+
+    .boost-btn {
+        height: 56px;
+        width: 197px;
+        background-color: #2BD0D0;
+        border-radius: 5rem;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+        margin-top: 20px;
+
+        &:hover {
+            background-color: allColors(btnHoverClr);
+        }    
+    }
+
+}
