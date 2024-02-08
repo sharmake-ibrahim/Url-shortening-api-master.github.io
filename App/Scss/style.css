@@ -295,37 +295,111 @@ footer li:hover {
   background-color: allColors(btnHoverClr);
 }
 
-.seaerch-section {
-  min-height: 160px;
+.share-link {
+  min-height: 600px;
   min-width: 327px;
-  background-color: #34313D;
-  border-radius: 5px;
+  background-color: #EFF1F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 75px;
 }
 
-.shorten-btn {
+.input-section {
+  min-height: 182px;
+  width: 327px;
+  background-color: #3A3054;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  padding: 10px 0;
+  margin-bottom: -80px;
+}
+.input-section .inputBtn {
   height: 48px;
   width: 278px;
-  background-color: #3A3054;
+  background-color: #2BD0D0;
   border-radius: 5px;
   border: none;
   color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.input-section .inputBtn:hover {
+  background-color: #9AE3E3;
 }
 
-.input {
-  min-height: 48px;
-  min-width: 279px;
+.searchBox {
+  margin-top: 20px;
+  display: grid;
+  height: 48px;
+  width: 279px;
+  place-items: right;
+  border-radius: 5px;
   background-color: #ffffff;
-  padding-left: 10px;
-  display: block;
-  row-gap: 8px;
 }
-.input p {
+.searchBox input {
+  padding-left: 15px;
+  outline: none;
+  font-size: 16px;
+  color: #34313D;
+  font-weight: medium;
+}
+
+.error-txt {
   font-size: 12px;
-  color: #f46363;
   font-style: italic;
+  color: #F46363;
+  padding-top: 4px;
+  display: none;
 }
-.input .error {
-  border: 1px solid #f46363;
+
+.inputLinks {
+  margin-top: 30px;
+  min-height: 155px;
+  min-width: 327px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.inputLinks p a {
+  color: #34313D;
+  font-size: 17px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #979797;
+}
+.inputLinks .link-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+.inputLinks li {
+  list-style-type: none;
+}
+.inputLinks li a {
+  color: #2BD0D0;
+  font-size: 17px;
+}
+.inputLinks .linkBtn {
+  height: 36px;
+  min-width: 177px;
+  background-color: #2BD0D0;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  max-width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.inputLinks .linkBtn:hover {
+  background-color: #9AE3E3;
+}
+.inputLinks .linkBtn:active {
+  background-color: #3A3054;
 }
 
 .hero-section {

@@ -2,7 +2,7 @@
 @import "./footer";
 @import "./statistic";
 @import "./boostLiks";
-@import "./input";
+@import "./InputSection";
 @import "./heroSection";
 @import "./header";
 @import "./variables";
@@ -11,6 +11,8 @@
 $ipad-view: 760px;
 $mobile: 760px;
 $destop-view: 960px;
+
+
 
 
 
@@ -32,6 +34,13 @@ $destop-view: 960px;
             @content;
         }
 }
+
+
+
+
+
+
+
 
 * {
     padding: 0;
