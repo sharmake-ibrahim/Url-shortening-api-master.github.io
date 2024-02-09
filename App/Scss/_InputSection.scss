@@ -1,7 +1,19 @@
 
+$ipad-view: 1173px;
+
+
+
+
+
+@mixin Ipad {
+    @media (min-width: #{$ipad-view}) {
+        @content;
+    }
+}
 .share-link {
     min-height: 600px;
     min-width: 327px;
+    width: 100%;
     background-color: #EFF1F7;
     display: flex;
     flex-direction: column;
@@ -20,7 +32,16 @@
     display: grid;
     place-items: center;
     padding: 10px 0;
-    margin-bottom: -80px;
+    // margin-top: -200px;
+
+    @include Ipad {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 15px;
+        min-height: 168px;
+        min-width: 1110px;
+    }
 
 
     .inputBtn {
@@ -36,6 +57,12 @@
         &:hover {
             background-color:#9AE3E3;
         }
+
+        @include Ipad {
+            min-height: 64px;
+            max-width: 188px;
+            font-size: 20px;
+        }
     }
 
 }
@@ -50,12 +77,23 @@
     border-radius: 5px;
     background-color: #ffffff;
 
+    @include Ipad {
+        min-height: 64px;
+        min-width: 769px;
+        margin-top: 0;
+    }
+
     input {
         padding-left: 15px;
         outline: none;
         font-size: 16px;
         color:#34313D ;
         font-weight: medium;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        @include Ipad {
+            font-size: 20px;
+        }
     }
 }
     .error-txt {
@@ -69,26 +107,42 @@
 
 
 .inputLinks {
-    margin-top: 30px;
+    margin-top: -35px;
     min-height: 155px;
     min-width: 327px;
     display: grid;
     place-items: center;
     border-radius: 5px;
     background-color: #ffffff;
+     @include Ipad {
+        padding:  0 25px;
+        min-height: 72px;
+        min-width: 1110px;
+        display: flex;
+        justify-content: space-between;
+     }
     
     p a {
         color: #34313D;
         font-size: 17px;
         padding-bottom: 15px;
         border-bottom: 1px solid #979797;
-    }
+        @include Ipad {
+            border: none;
+            font-size: 20px;
+        }
+    } 
 
     .link-container {
         display: flex;
         flex-direction: column;
         row-gap: 6px;
-        // border-top: 1px solid #979797;
+        @include Ipad {
+            flex-direction: row;
+            column-gap: 10px;
+            align-items: center;
+
+        }
         
     }
 
@@ -99,6 +153,9 @@
     li a {
         color: #2BD0D0;
         font-size: 17px;
+        @include Ipad {
+            font-size: 20px;
+        }
     }
 
     
@@ -121,9 +178,16 @@
         &:active {
             background-color: #3A3054;
         }
+
+        @include Ipad {
+            min-height: 40px;
+            min-width: 103px;
+        }
     }
     
 }
+
+
 
 
    

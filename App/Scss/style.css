@@ -298,6 +298,7 @@ footer li:hover {
 .share-link {
   min-height: 600px;
   min-width: 327px;
+  width: 100%;
   background-color: #EFF1F7;
   display: flex;
   flex-direction: column;
@@ -314,7 +315,17 @@ footer li:hover {
   display: grid;
   place-items: center;
   padding: 10px 0;
-  margin-bottom: -80px;
+}
+@media (min-width: 1173px) {
+  .input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+    min-height: 168px;
+    min-width: 1110px;
+  }
 }
 .input-section .inputBtn {
   height: 48px;
@@ -330,6 +341,13 @@ footer li:hover {
 .input-section .inputBtn:hover {
   background-color: #9AE3E3;
 }
+@media (min-width: 1173px) {
+  .input-section .inputBtn {
+    min-height: 64px;
+    max-width: 188px;
+    font-size: 20px;
+  }
+}
 
 .searchBox {
   margin-top: 20px;
@@ -340,12 +358,26 @@ footer li:hover {
   border-radius: 5px;
   background-color: #ffffff;
 }
+@media (min-width: 1173px) {
+  .searchBox {
+    min-height: 64px;
+    min-width: 769px;
+    margin-top: 0;
+  }
+}
 .searchBox input {
   padding-left: 15px;
   outline: none;
   font-size: 16px;
   color: #34313D;
   font-weight: medium;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+@media (min-width: 1173px) {
+  .searchBox input {
+    font-size: 20px;
+  }
 }
 
 .error-txt {
@@ -357,7 +389,7 @@ footer li:hover {
 }
 
 .inputLinks {
-  margin-top: 30px;
+  margin-top: -35px;
   min-height: 155px;
   min-width: 327px;
   display: grid;
@@ -365,16 +397,39 @@ footer li:hover {
   border-radius: 5px;
   background-color: #ffffff;
 }
+@media (min-width: 1173px) {
+  .inputLinks {
+    padding: 0 25px;
+    min-height: 72px;
+    min-width: 1110px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .inputLinks p a {
   color: #34313D;
   font-size: 17px;
   padding-bottom: 15px;
   border-bottom: 1px solid #979797;
 }
+@media (min-width: 1173px) {
+  .inputLinks p a {
+    border: none;
+    font-size: 20px;
+  }
+}
 .inputLinks .link-container {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
+}
+@media (min-width: 1173px) {
+  .inputLinks .link-container {
+    flex-direction: row;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    align-items: center;
+  }
 }
 .inputLinks li {
   list-style-type: none;
@@ -382,6 +437,11 @@ footer li:hover {
 .inputLinks li a {
   color: #2BD0D0;
   font-size: 17px;
+}
+@media (min-width: 1173px) {
+  .inputLinks li a {
+    font-size: 20px;
+  }
 }
 .inputLinks .linkBtn {
   height: 36px;
@@ -400,6 +460,12 @@ footer li:hover {
 }
 .inputLinks .linkBtn:active {
   background-color: #3A3054;
+}
+@media (min-width: 1173px) {
+  .inputLinks .linkBtn {
+    min-height: 40px;
+    min-width: 103px;
+  }
 }
 
 .hero-section {
