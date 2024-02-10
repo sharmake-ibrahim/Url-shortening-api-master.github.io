@@ -1,58 +1,87 @@
 
-// function UserInput() {
-//     const link_section = document.querySelector(".link-section")
-//     const SearchBox = document.querySelector(".searchBox");
-//     const invalid_txt = document.querySelector(".invalid-text")
-//     const shortenBtn = document.querySelector(".shorten-btn")
-//     const links = document.querySelector(".links");
-//     console.log(links);
-
-//     console.log(SearchBox)
-//     console.log(invalid_txt)
-//     console.log(shortenBtn)
-//  shortenBtn.addEventListener('click', ()=> {
-//     if ( SearchBox.value === "")  {
-//         invalid_txt.style.opacity = " 100";
-//         SearchBox.classList.add('red-border');
-//     }
 
 
-//     else {
-       
+const HamburgerMenu = ()=> {
+    const Ul = document.querySelector('ul');
+    const menu = document.querySelector('.menu');
+    menu.addEventListener("click", ()=> {
+        Ul.classList.toggle("show");
+    })
+}
+
+HamburgerMenu();
+
+
+
+function linkShortener() {
     
-//         const Ul = document.createElement("ul");
-//         const li = document.createElement("li");
-//         const Flex = document.createElement("div");
-//         const aLink = document.createElement('a');
-//         const copyBtn = document.createElement('button')
+    const allLinks = document.createElement('div')
+    allLinks.className = "allLinks";
+    const inputSection = document.createElement("div");
+    inputSection.className = "input-section";
+    const inputContainer = document.createElement("div");
+    inputContainer.className = "input-container";
+    const searchBox = document.createElement("div");
+    searchBox.className = "searchBox";
+    const input = document.createElement("input");
+    input.placeholder = "Shorten a link here..."
+    const errorTxt = document.createElement("p");
+    errorTxt.className = "error-txt";
+    errorTxt.textContent = "Please add a link";
+    const inputBtn = document.createElement('button');
+    inputBtn.className = " inputBtn";
+    inputBtn.textContent = "Shorten It!";
 
-//         links.appendChild(Ul);
-//         Ul.appendChild(li);
-//         Ul.appendChild(Flex);
-//         Flex.appendChild(aLink);
-//         Flex.appendChild(copyBtn);
+    inputContainer.appendChild(searchBox);
+    searchBox.appendChild(input);
+    inputContainer.appendChild(errorTxt);
+    inputSection.appendChild(inputContainer);
+    inputSection.appendChild(inputBtn)
 
-//         links.classList.add('links');
-//         copyBtn.classList.add("copy-btn")
-//         Flex.classList.add("flex");
-//         copyBtn.classList.add("copy-btn")
-//         li.textContent = SearchBox.value;
-//         copyBtn.textContent = "Copy"
-//         aLink.textContent = SearchBox.value;
-//         copyBtn.addEventListener('click', ()=> {
-//             copyBtn.textContent = "Copied";
-//         })
-            
 
-//     }
+    const inputLinks = document.createElement('div');
+    inputLinks.className = "inputLinks";
+    const linkOneTxt = document.createElement("p");
+    const aOne = document.createElement("a");
+    aOne.href= "https://github.com/Sharmake2024";
+    aOne.textContent = "https://github.com/Sharmake2024";
+    linkOneTxt.appendChild(aOne);
+    const linkContainer = document.createElement('div');
+    linkContainer.className = "link-container";
+    const list = document.createElement("li");
+    const aTwo = document.createElement('a');
+    aTwo.href= "https://github.com/Sharmake2024";
+    aTwo.textContent = "https://github.com/Sharmake2024"
+    list.appendChild(aTwo);
+    const linkBtn = document.createElement("button");
+    linkBtn.className = "linkBtn";
+    linkBtn.textContent = "Copy";
+    linkContainer.appendChild(list);
+    linkContainer.appendChild(linkBtn);
+
+    inputLinks.appendChild(linkOneTxt)
+    inputLinks.appendChild(linkContainer);
+
+    
+    allLinks.appendChild(inputSection);
+    allLinks.appendChild(inputLinks);
+
+
+    return allLinks
+
+}
   
-    
-    
+const share_link = document.querySelector(".share-link");
+console.log(share_link);
 
-//  })
-// }
+console.log(linkShortener());
 
-// UserInput()
+
+share_link.append(linkShortener());
+
+
+
+
 
 // const url = 'https://ismaelc-bitly.p.rapidapi.com/v3/shorten?login=%3CREQUIRED%3E&apikey=%3CREQUIRED%3E&longUrl=http%3A%2F%2Fwww.mashape.com';
 // const options = {
@@ -74,14 +103,3 @@
 // }
 
 // }
-
-
-const HamburgerMenu = ()=> {
-    const Ul = document.querySelector('ul');
-    const menu = document.querySelector('.menu');
-    menu.addEventListener("click", ()=> {
-        Ul.classList.toggle("show");
-    })
-}
-
-HamburgerMenu();
