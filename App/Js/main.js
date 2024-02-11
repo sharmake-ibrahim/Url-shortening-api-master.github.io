@@ -67,14 +67,50 @@ function linkShortener() {
     allLinks.appendChild(inputLinks);
 
 
-    return allLinks
+    // inputBtn.addEventListener("click");
+
+
+// if( input.value === "") {
+//     searchBox.style.border = " 3px solid #F46363";
+//     errorTxt.style.display = "block";
+// }
+ 
+
+
+// async function getData(){
+
+//     if( input.value === "") {
+//         searchBox.style.border = " 3px solid #F46363";
+//         errorTxt.style.display = "block";
+//     }
+//     else {
+    // const res = await fetch(`https://tinyurl.com/api-create.php?url=${input.value}`);
+    // const data = await res.json();
+    // console.log(data);
+    // console.log("Hello World");
+ 
+    // }
+ 
+    
+
+
+
+}
+
+
+
+
+
+    
+
+    return allLinks;
 
 }
   
 const share_link = document.querySelector(".share-link");
-console.log(share_link);
+// console.log(share_link);
 
-console.log(linkShortener());
+// console.log(linkShortener());
 
 
 share_link.append(linkShortener());
@@ -82,24 +118,4 @@ share_link.append(linkShortener());
 
 
 
-
-// const url = 'https://ismaelc-bitly.p.rapidapi.com/v3/shorten?login=%3CREQUIRED%3E&apikey=%3CREQUIRED%3E&longUrl=http%3A%2F%2Fwww.mashape.com';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-// 		'X-RapidAPI-Host': 'ismaelc-bitly.p.rapidapi.com'
-// 	}
-// };
-
-// async function fetchData() {
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-//     console.log(" something wrong")
-// }
-
-// }
+// https://api.shrtco.de/v2/shorten?url=example.org/very/long/link.html

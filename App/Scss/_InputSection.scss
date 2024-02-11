@@ -95,6 +95,8 @@ $ipad-view: 1173px;
             font-size: 20px;
         }
     }
+
+    
 }
     .error-txt {
         font-size: 12px;
@@ -104,6 +106,9 @@ $ipad-view: 1173px;
         display: none;
     }
 
+    .input-error {
+        border: 1px solid #F46363;
+    }
 
 
 .inputLinks {

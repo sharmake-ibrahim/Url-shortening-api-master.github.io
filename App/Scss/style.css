@@ -388,6 +388,10 @@ footer li:hover {
   display: none;
 }
 
+.input-error {
+  border: 1px solid #F46363;
+}
+
 .inputLinks {
   margin-top: 25px;
   min-height: 155px;
