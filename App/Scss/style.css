@@ -591,12 +591,13 @@ footer li:hover {
 
 header {
   min-height: 40px;
-  min-width: 1108px;
+  width: 1108px;
   max-width: 100%;
   background-color: #FFFFFF;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 3em;
 }
 header .logo {
   margin-top: 2em;
@@ -611,15 +612,23 @@ header .logo img {
 }
 header .menu {
   display: none;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
 }
-@media (max-width: 375px) {
+@media (max-width: 1023px) {
   header .menu {
-    display: flex;
+    display: block;
   }
 }
 header nav {
   max-height: 40px;
-  max-width: 800px;
+  max-width: 600px;
+}
+@media (max-width: 1023px) {
+  header nav {
+    display: none;
+  }
 }
 header ul {
   display: flex;
@@ -627,6 +636,25 @@ header ul {
   -moz-column-gap: 30em;
        column-gap: 30em;
   align-items: center;
+  padding-right: 4em;
+}
+@media (max-width: 1677px) {
+  header ul {
+    -moz-column-gap: 22em;
+         column-gap: 22em;
+  }
+}
+@media (max-width: 1120px) {
+  header ul {
+    -moz-column-gap: 14em;
+         column-gap: 14em;
+  }
+}
+@media (max-width: 1063px) {
+  header ul {
+    -moz-column-gap: 5em;
+         column-gap: 5em;
+  }
 }
 header .nav-links {
   display: flex;
@@ -661,13 +689,6 @@ header .header-btns button {
 }
 header .header-btns button:hover {
   background-color: #9AE3E3;
-}
-@media (max-width: 375px) {
-  header .header-btns button {
-    height: 48px;
-    width: 279px;
-    font-size: 18px;
-  }
 }
 header .header-btns a {
   color: #9E9AA8;

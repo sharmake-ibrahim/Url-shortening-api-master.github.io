@@ -2,21 +2,45 @@
 @import "./variables";
 
 
-$mobile: 375px;
+$mobile: 1677px;
+$mobile-md: 1120px;
+$mobile-thrid: 1063px;
+$mobile-sm: 1023px;
 @mixin mobile{
     @media (max-width: #{$mobile}) {
         @content;
     }
 }
+
+@mixin mobileMd {
+    @media (max-width: #{$mobile-md}) {
+        @content;
+    }
+}
+@mixin mobile-view-3 {
+    @media (max-width: #{$mobile-thrid}) {
+        @content;
+    }
+}
+@mixin Mobile-sm {
+    @media (max-width: #{$mobile-sm}) {
+        @content;
+    }
+}
+
+
+
+
 header {
     min-height: 40px;
-    min-width: 1108px;
+    width: 1108px;
     max-width: 100%;
     background-color: #FFFFFF;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-
+    padding: 0 3em;
+ 
         .logo {
             margin-top: 2em;
             height: 45px;
@@ -29,15 +53,22 @@ header {
     }
     .menu {
         display: none;
-        @include mobile {
-            display: flex;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        @include Mobile-sm {
+            display: block;
         }
     }
 
 
+
     nav {
         max-height: 40px;
-        max-width: 800px;
+        max-width: 600px;
+        @include Mobile-sm {
+            display: none;
+        }
     }
 
     ul {
@@ -45,7 +76,20 @@ header {
         justify-content: space-between;
         column-gap: 30em;
         align-items: center;
+        padding-right: 4em;
+        @include mobile {
+            column-gap: 22em;
+        }
 
+        @include mobileMd {
+            column-gap: 14em;
+        }
+
+        @include mobile-view-3 {
+            column-gap: 5em;
+        }
+
+    
     }
 
     .nav-links {
@@ -68,6 +112,7 @@ header {
         display: flex;
         column-gap: 25px;
         align-items: center;
+       
     }
 
 
@@ -85,11 +130,6 @@ header {
         background-color: #9AE3E3;
     }
 
-    @include mobile() {
-        height: 48px;
-        width: 279px;
-        font-size: 18px;
-    }
 }
 
 .header-btns a {
