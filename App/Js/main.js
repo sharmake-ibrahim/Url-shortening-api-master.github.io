@@ -1,15 +1,15 @@
 
 
 
-// const HamburgerMenu = ()=> {
-//     const Ul = document.querySelector('ul');
-//     const menu = document.querySelector('.menu');
-//     menu.addEventListener("click", ()=> {
-//         Ul.classList.toggle("show");
-//     })
-// }
+const HamburgerMenu = ()=> {
+    const Navbar= document.querySelector('nav');
+    const menu = document.querySelector('.menu');
+    menu.addEventListener("click", ()=> {
+        Navbar.classList.toggle("show");
+    });
+}
 
-// HamburgerMenu();
+HamburgerMenu();
 
 
 

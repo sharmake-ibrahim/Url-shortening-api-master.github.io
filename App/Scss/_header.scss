@@ -69,6 +69,16 @@ header {
         @include Mobile-sm {
             display: none;
         }
+
+        // @include Mobile-sm {
+        //     display: grid;
+        //     justify-content: center;
+        //     place-items: center;
+        // }
+    }
+
+    .show {
+        display: block;
     }
 
     ul {
@@ -89,6 +99,21 @@ header {
             column-gap: 5em;
         }
 
+        @include Mobile-sm {
+            background-color:#3A3054;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 6em;
+            right: 4em;
+            height: 383px;
+            min-width: 327px;
+            border-radius: 10px;
+            text-align: center;
+            padding-right: 0;
+
+        }
     
     }
 
@@ -96,6 +121,13 @@ header {
         display: flex;
         column-gap: 30px;
         align-items: center;
+        @include Mobile-sm {
+            flex-direction: column;
+            row-gap: 1em;
+            justify-content: center;
+            align-items: center;
+            
+        }
     }
 
     .nav-links a {
@@ -106,12 +138,34 @@ header {
         &:hover {
             color: #34313D;
         }
+
+        @include Mobile-sm {
+            font-size: 18px;
+            color: #FFFFFF;
+
+            &:hover {
+                color: #9E9AA8;
+            }
+        }
     }
 
     .header-btns {
         display: flex;
         column-gap: 25px;
         align-items: center;
+
+        @include Mobile-sm {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 20px;
+            margin-top: 2em;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 18px;
+            border-top: 1px solid #9E9AA8;
+            padding-top: 1em;
+        }
        
     }
 
@@ -130,12 +184,30 @@ header {
         background-color: #9AE3E3;
     }
 
+    @include Mobile-sm {
+        color: #FFFFFF;
+        font-size: 18px;
+        height: 48px;
+        width: 279px;
+        border-radius: 28px;
+        font-weight: bold;
+    }
+
 }
 
 .header-btns a {
     color: #9E9AA8;
     font-size: 15px;
     font-weight: bold;
+
+    @include Mobile-sm {
+        color: #FFFFFF;
+        font-size: 18px;
+    }
 }
 
+
+
 }
+
+
