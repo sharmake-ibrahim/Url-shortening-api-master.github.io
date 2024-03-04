@@ -91,6 +91,19 @@ function linkShortener() {
             }
 
 
+
+            // async function copyText() {
+
+            //     const copiedTxt = input.value;
+            //      await navigator.clipboard.writeText(copiedTxt);
+            //     const Copied =  await navigator.clipboard.readText()
+            //     console.log(Copied);
+            //     linkBtn.style.background = "#34313D";
+            // }
+
+            // linkBtn.addEventListener("click", copyText);
+        
+
             
 
 
