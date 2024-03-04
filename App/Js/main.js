@@ -50,7 +50,6 @@ function linkShortener() {
                 linkContainer.className = "link-container";
                 const list = document.createElement("li");
                 const aTwo = document.createElement('a');
-                aTwo.href= "https://github.com/Sharmake2024";
                 aTwo.textContent = "https://github.com/Sharmake2024"
                 list.appendChild(aTwo);
                 const linkBtn = document.createElement("button");
@@ -75,15 +74,16 @@ function linkShortener() {
                 errorTxt.style.display = "block";
             }  else {
                 aOne.textContent = input.value;
+                aTwo.textContent = input.value;  
 
-                    async function getData() {
-                        const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`);
-                        const data = await res.json();
+                    // async function getData() {
+                    //     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`);
+                    //     const data = await res.json();
 
-                        console.log(data);
+                    //     console.log(data);
 
-                    }
-                    getData();
+                    // }
+                    // getData();
             }
             
             return input.value = '';
@@ -91,6 +91,7 @@ function linkShortener() {
             }
 
 
+            
 
 
 
