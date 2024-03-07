@@ -39,18 +39,36 @@ function linkShortener() {
                 inputSection.appendChild(inputBtn)
 
 
+               
+
+                
+                allLinks.appendChild(inputSection);
+                
+
+
+                inputBtn.addEventListener("click", makeShortenUrl);
+
+                function makeShortenUrl() {
+
+                if( input.value === "") {
+                searchBox.style.border = " 3px solid #F46363";
+                errorTxt.style.display = "block";
+            }  else {
+                errorTxt.style.display = "none";
+                searchBox.style.border = "none";
+                
                 const inputLinks = document.createElement('div');
                 inputLinks.className = "inputLinks";
                 const linkOneTxt = document.createElement("p");
                 const aOne = document.createElement("a");
-                aOne.href= "https://github.com/Sharmake2024";
-                aOne.textContent = "https://github.com/Sharmake2024";
+                // aOne.href= "https://github.com/Sharmake2024";
+                aOne.textContent = input.value;
                 linkOneTxt.appendChild(aOne);
                 const linkContainer = document.createElement('div');
                 linkContainer.className = "link-container";
                 const list = document.createElement("li");
                 const aTwo = document.createElement('a');
-                aTwo.textContent = "https://github.com/Sharmake2024"
+                aTwo.textContent = input.value;
                 list.appendChild(aTwo);
                 const linkBtn = document.createElement("button");
                 linkBtn.className = "linkBtn";
@@ -58,32 +76,15 @@ function linkShortener() {
                 linkContainer.appendChild(list);
                 linkContainer.appendChild(linkBtn);
 
+                linkBtn.addEventListener("click", ()=> {
+                    linkBtn.style.background =  " #3A3054"
+                    linkBtn.textContent = " Copied";
+                });
+
                 inputLinks.appendChild(linkOneTxt)
                 inputLinks.appendChild(linkContainer);
-
-                
-                allLinks.appendChild(inputSection);
                 allLinks.appendChild(inputLinks);
 
-
-                inputBtn.addEventListener("click", makeShortenUrl);
-
-                function makeShortenUrl() {
-                if( input.value === "") {
-                searchBox.style.border = " 3px solid #F46363";
-                errorTxt.style.display = "block";
-            }  else {
-                aOne.textContent = input.value;
-                aTwo.textContent = input.value;  
-
-                    // async function getData() {
-                    //     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`);
-                    //     const data = await res.json();
-
-                    //     console.log(data);
-
-                    // }
-                    // getData();
             }
             
             return input.value = '';
@@ -91,33 +92,10 @@ function linkShortener() {
             }
 
 
-
-            // async function copyText() {
-
-            //     const copiedTxt = input.value;
-            //      await navigator.clipboard.writeText(copiedTxt);
-            //     const Copied =  await navigator.clipboard.readText()
-            //     console.log(Copied);
-            //     linkBtn.style.background = "#34313D";
-            // }
-
-            // linkBtn.addEventListener("click", copyText);
-        
-
-            
-
-
-
-
                 return allLinks;
 
 }
-  
+
 const share_link = document.querySelector(".share-link");
-// console.log(share_link);
-
-// console.log(linkShortener());
-
-
 share_link.append(linkShortener());
 

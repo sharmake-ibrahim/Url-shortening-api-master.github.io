@@ -414,7 +414,6 @@ footer li:hover {
   color: #34313D;
   font-size: 17px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #979797;
 }
 @media (min-width: 1173px) {
   .inputLinks p a {
@@ -426,6 +425,8 @@ footer li:hover {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
+  border-top: 1px solid #9E9AA8;
+  min-width: 326px;
 }
 @media (min-width: 1173px) {
   .inputLinks .link-container {
@@ -437,6 +438,7 @@ footer li:hover {
 }
 .inputLinks li {
   list-style-type: none;
+  text-align: center;
 }
 .inputLinks li a {
   color: #2BD0D0;

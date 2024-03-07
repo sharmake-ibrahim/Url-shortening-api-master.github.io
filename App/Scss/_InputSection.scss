@@ -131,7 +131,7 @@ $ipad-view: 1173px;
         color: #34313D;
         font-size: 17px;
         padding-bottom: 15px;
-        border-bottom: 1px solid #979797;
+        // border-bottom: 1px solid #979797;
         @include Ipad {
             border: none;
             font-size: 20px;
@@ -142,6 +142,8 @@ $ipad-view: 1173px;
         display: flex;
         flex-direction: column;
         row-gap: 6px;
+        border-top: 1px solid #9E9AA8;
+        min-width: 326px;
         @include Ipad {
             flex-direction: row;
             column-gap: 10px;
@@ -153,6 +155,7 @@ $ipad-view: 1173px;
 
     li {
         list-style-type: none;
+        text-align: center;
     }
 
     li a {
