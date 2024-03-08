@@ -24,6 +24,9 @@ function linkShortener() {
                 const searchBox = document.createElement("div");
                 searchBox.className = "searchBox";
                 const input = document.createElement("input");
+                    //local storage //
+                localStorage.setItem('data', input.value);
+
                 input.placeholder = "Shorten a link here..."
                 const errorTxt = document.createElement("p");
                 errorTxt.className = "error-txt";
@@ -46,29 +49,44 @@ function linkShortener() {
                 
 
 
+            
+
+               
                 inputBtn.addEventListener("click", makeShortenUrl);
 
                 function makeShortenUrl() {
 
+                    
+                
                 if( input.value === "") {
                 searchBox.style.border = " 3px solid #F46363";
                 errorTxt.style.display = "block";
             }  else {
                 errorTxt.style.display = "none";
                 searchBox.style.border = "none";
+
+                // local storage
+                // const aOne = document.createElement("a");
+                // aOne.textContent =  localStorage.getItem('data', input.value);
+                // const aTwo = document.createElement('a');
+                // aTwo.textContent =  localStorage.getItem('data', input.value);
+
+
                 
                 const inputLinks = document.createElement('div');
                 inputLinks.className = "inputLinks";
                 const linkOneTxt = document.createElement("p");
-                const aOne = document.createElement("a");
+               
                 // aOne.href= "https://github.com/Sharmake2024";
-                aOne.textContent = input.value;
+                
+                aOne.textContent =  localStorage.setItem('value',input.value);
                 linkOneTxt.appendChild(aOne);
                 const linkContainer = document.createElement('div');
                 linkContainer.className = "link-container";
                 const list = document.createElement("li");
-                const aTwo = document.createElement('a');
-                aTwo.textContent = input.value;
+               
+                
+                aTwo.textContent =  localStorage.setItem('value',input.value);
                 list.appendChild(aTwo);
                 const linkBtn = document.createElement("button");
                 linkBtn.className = "linkBtn";
