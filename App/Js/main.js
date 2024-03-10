@@ -66,10 +66,10 @@ function linkShortener() {
                 searchBox.style.border = "none";
 
                 // local storage
-                // const aOne = document.createElement("a");
-                // aOne.textContent =  localStorage.getItem('data', input.value);
-                // const aTwo = document.createElement('a');
-                // aTwo.textContent =  localStorage.getItem('data', input.value);
+                const aOne = document.createElement("a");
+                aOne.textContent = input.value;
+                const aTwo = document.createElement('a');
+                aTwo.textContent =  input.value;
 
 
                 
@@ -79,14 +79,14 @@ function linkShortener() {
                
                 // aOne.href= "https://github.com/Sharmake2024";
                 
-                aOne.textContent =  localStorage.setItem('value',input.value);
+                // aOne.textContent =  localStorage.setItem('value',input.value);
                 linkOneTxt.appendChild(aOne);
                 const linkContainer = document.createElement('div');
                 linkContainer.className = "link-container";
                 const list = document.createElement("li");
                
                 
-                aTwo.textContent =  localStorage.setItem('value',input.value);
+                // aTwo.textContent =  localStorage.setItem('value',input.value);
                 list.appendChild(aTwo);
                 const linkBtn = document.createElement("button");
                 linkBtn.className = "linkBtn";
