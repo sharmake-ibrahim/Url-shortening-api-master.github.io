@@ -14,6 +14,8 @@ HamburgerMenu();
 
 
 function linkShortener() {
+
+     
     
                 const allLinks = document.createElement('div')
                 allLinks.className = "allLinks";
@@ -56,7 +58,7 @@ function linkShortener() {
 
                 function makeShortenUrl() {
 
-                    
+              
                 
                 if( input.value === "") {
                 searchBox.style.border = " 3px solid #F46363";
@@ -65,11 +67,35 @@ function linkShortener() {
                 errorTxt.style.display = "none";
                 searchBox.style.border = "none";
 
-                // local storage
+
+            // fetching data from api
+            async function getData(url) {
+                try {
+            
+                    let res = await fetch(`https://www.shareaholic.com/v2/share/shorten_link?apikey=8943b7fd64cd8b1770ff5affa9a9437b&url=${url}/&service[name]=shrlc`);
+                    let urlData = await res.json();
+                
+                    console.log("data", urlData);
+
+                    const { data} = urlData;
+
+                    aTwo.textContent = data;
+
+                }
+               
+                catch (error) {
+                    console.log(error);
+                }
+            
+            }
+
+            getData(input.value);
+           
+
                 const aOne = document.createElement("a");
                 aOne.textContent = input.value;
                 const aTwo = document.createElement('a');
-                aTwo.textContent =  input.value;
+                
 
 
                 
@@ -77,7 +103,7 @@ function linkShortener() {
                 inputLinks.className = "inputLinks";
                 const linkOneTxt = document.createElement("p");
                
-                // aOne.href= "https://github.com/Sharmake2024";
+              
                 
                 // aOne.textContent =  localStorage.setItem('value',input.value);
                 linkOneTxt.appendChild(aOne);
@@ -87,6 +113,15 @@ function linkShortener() {
                
                 
                 // aTwo.textContent =  localStorage.setItem('value',input.value);
+                const CopyAndPasteText = async ()=> {
+                    const text = aTwo.textContent;
+                    await navigator.clipboard.writeText(text);
+                    await navigator.clipboard.readText();
+        
+
+                }
+                
+
                 list.appendChild(aTwo);
                 const linkBtn = document.createElement("button");
                 linkBtn.className = "linkBtn";
@@ -97,6 +132,8 @@ function linkShortener() {
                 linkBtn.addEventListener("click", ()=> {
                     linkBtn.style.background =  " #3A3054"
                     linkBtn.textContent = " Copied";
+                    CopyAndPasteText()
+                    
                 });
 
                 inputLinks.appendChild(linkOneTxt)
@@ -116,4 +153,12 @@ function linkShortener() {
 
 const share_link = document.querySelector(".share-link");
 share_link.append(linkShortener());
+
+
+
+
+
+
+
+
 
