@@ -7,6 +7,18 @@ const HamburgerMenu = ()=> {
     menu.addEventListener("click", ()=> {
         Navbar.classList.toggle("show");
     });
+
+    const navLinks = document.querySelectorAll(".nav-links li");
+    navLinks.forEach( (link)=> {
+        link.addEventListener("click", ()=>{
+            Navbar.classList.remove("show");
+        })
+    })
+
+    const headerBtns = document.querySelector(".header-btns");
+        headerBtns.addEventListener("click", ()=> {
+            Navbar.classList.remove("show");
+        })
 }
 
 HamburgerMenu();
