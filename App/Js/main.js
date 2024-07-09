@@ -21,7 +21,26 @@ const HamburgerMenu = ()=> {
         })
 }
 
-HamburgerMenu();
+      HamburgerMenu();
+
+
+
+      
+const NavigateLinks = ()=> {
+    const sections = document.querySelectorAll('section');
+        let currentSection = "home";
+        Window.addEventListener("scroll", ()=> {
+
+            sections.forEach( (section)=> {
+                window.scrollY >= section.offsetTop ?  currentSection = section.id : ""
+
+            })
+        })
+
+  
+}
+
+NavigateLinks();
 
 
 
