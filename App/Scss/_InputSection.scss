@@ -126,7 +126,7 @@ $ipad-view: 1173px;
     background-color: #ffffff;
      @include Ipad {
         padding:  0 25px;
-        min-height: fit-content;
+        min-height: 75px;
         max-width: 1110px;
         text-align: justify;
         display: flex;

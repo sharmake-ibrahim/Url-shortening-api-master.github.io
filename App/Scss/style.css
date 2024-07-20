@@ -411,8 +411,7 @@ footer li:hover {
 @media (min-width: 1173px) {
   .inputLinks {
     padding: 0 25px;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
+    min-height: 75px;
     max-width: 1110px;
     text-align: justify;
     display: flex;
