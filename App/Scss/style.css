@@ -295,10 +295,16 @@ footer li:hover {
   background-color: allColors(btnHoverClr);
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .share-link {
   min-height: 600px;
   min-width: 327px;
-  width: 100%;
+  max-width: 100%;
   background-color: #EFF1F7;
   display: flex;
   flex-direction: column;
@@ -399,26 +405,35 @@ footer li:hover {
   display: grid;
   place-items: center;
   border-radius: 5px;
+  box-sizing: border-box;
   background-color: #ffffff;
 }
 @media (min-width: 1173px) {
   .inputLinks {
     padding: 0 25px;
-    min-height: 72px;
-    min-width: 1110px;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    max-width: 1110px;
+    text-align: justify;
     display: flex;
     justify-content: space-between;
   }
 }
+.inputLinks p {
+  max-width: 600px;
+  text-align: justify;
+}
 .inputLinks p a {
   color: #34313D;
   font-size: 17px;
+  text-align: justify;
   padding-bottom: 15px;
 }
 @media (min-width: 1173px) {
   .inputLinks p a {
     border: none;
     font-size: 20px;
+    max-width: 600px;
   }
 }
 .inputLinks .link-container {

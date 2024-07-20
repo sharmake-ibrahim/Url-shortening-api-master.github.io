@@ -26,21 +26,21 @@ const HamburgerMenu = ()=> {
 
 
       
-const NavigateLinks = ()=> {
-    const sections = document.querySelectorAll('section');
-        let currentSection = "home";
-        Window.addEventListener("scroll", ()=> {
+// const NavigateLinks = ()=> {
+//     const sections = document.querySelectorAll('section');
+//         let currentSection = "home";
+//         Window.addEventListener("scroll", ()=> {
 
-            sections.forEach( (section)=> {
-                window.scrollY >= section.offsetTop ?  currentSection = section.id : ""
+//             sections.forEach( (section)=> {
+//                 window.scrollY >= section.offsetTop ?  currentSection = section.id : ""
 
-            })
-        })
+//             })
+//         })
 
   
-}
+// }
 
-NavigateLinks();
+// NavigateLinks();
 
 
 
@@ -61,6 +61,7 @@ function linkShortener() {
                 localStorage.setItem('data', input.value);
 
                 input.placeholder = "Shorten a link here..."
+                input.maxLength= "200";
                 const errorTxt = document.createElement("p");
                 errorTxt.className = "error-txt";
                 errorTxt.textContent = "Please add a link";
@@ -91,34 +92,34 @@ function linkShortener() {
 
               
                 
-                if( input.value === "") {
-                searchBox.style.border = " 3px solid #F46363";
-                errorTxt.style.display = "block";
-            }  else {
-                errorTxt.style.display = "none";
-                searchBox.style.border = "none";
+                        if( input.value === "") {
+                        searchBox.style.border = " 3px solid #F46363";
+                        errorTxt.style.display = "block";
+                    }  else {
+                        errorTxt.style.display = "none";
+                        searchBox.style.border = "none";
 
 
             // fetching data from api
-            async function getData(url) {
-                try {
-            
-                    let res = await fetch(`https://www.shareaholic.com/v2/share/shorten_link?apikey=8943b7fd64cd8b1770ff5affa9a9437b&url=${url}/&service[name]=shrlc`);
-                    let urlData = await res.json();
-                
-                    console.log("data", urlData);
+                            async function getData(url) {
+                            try {
+                        
+                                let res = await fetch(`https://www.shareaholic.com/v2/share/shorten_link?apikey=8943b7fd64cd8b1770ff5affa9a9437b&url=${url}/&service[name]=shrlc`);
+                                let urlData = await res.json();
+                            
+                                console.log("data", urlData);
 
-                    const { data} = urlData;
+                                const { data} = urlData;
 
-                    aTwo.textContent = data;
+                                aTwo.textContent = data;
 
-                }
-               
-                catch (error) {
-                    console.log(error);
-                }
-            
-            }
+                            }
+                        
+                            catch (error) {
+                                console.log(error);
+                            }
+                        
+                        }
 
             getData(input.value);
            
@@ -184,6 +185,7 @@ function linkShortener() {
 
 const share_link = document.querySelector(".share-link");
 share_link.append(linkShortener());
+
 
 
 
